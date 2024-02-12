@@ -20,6 +20,7 @@ RUN set -eux; \
     # Packages needed only for build
     apk add --no-cache --virtual .build-deps \
         $PHPIZE_DEPS \
+        postgresql-dev \
     && \
     # Packages to install
     apk add --no-cache \
@@ -29,11 +30,11 @@ RUN set -eux; \
         libwebp-tools \
         nano \
         optipng \
-        mysql-client \
+        postgresql-client \
     && \
     # Install PHP extensions
     docker-php-ext-install \
-        pdo_mysql \
+        pdo_pgsql \
     && \
     # Install Composer
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer \

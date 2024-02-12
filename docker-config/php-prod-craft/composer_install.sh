@@ -17,9 +17,9 @@ chown -R www-data:www-data /var/www/project/cms/web/cpresources
 cd /var/www/project/cms
 if [ ! -f "composer.lock" ] || [ ! -f "vendor/autoload.php" ]; then
     su-exec www-data composer install --verbose --no-progress --no-scripts --optimize-autoloader --no-interaction
-    # Wait until the MySQL db container responds
-    echo "### Waiting for MySQL database"
-    until eval "mysql -h mariadb -u $DB_USER -p$DB_PASSWORD $DB_DATABASE -e 'select 1' > /dev/null 2>&1"
+    # Wait until the PostgreSQL db container responds
+    echo "### Waiting for PostgreSQL database"
+    until eval "psql -h postgres -U $DB_USER $DB_DATABASE -c 'select 1'" > /dev/null 2>&1
     do
       sleep 1
     done
