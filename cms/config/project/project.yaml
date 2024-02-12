@@ -1,0 +1,121 @@
+dateModified: 1707730338
+elementSources:
+  craft\elements\Entry:
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - section
+        - postDate
+        - expiryDate
+        - author
+        - link
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: false
+      key: 'single:54e60257-f31a-44aa-960e-bbd364197e28' # Homepage
+      tableAttributes:
+        - postDate
+        - expiryDate
+        - author
+        - link
+      type: native
+    -
+      key: 'section:a72bfe0c-3389-4f9f-8ec1-ab318ec10b29' # Errors
+      type: native
+email:
+  fromEmail: dennis@gilli.ch
+  fromName: Craft
+  replyToEmail: null
+  template: ''
+  transportSettings:
+    command: '/usr/sbin/sendmail -bs'
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  site:
+    hasUrls: true
+    name: Site
+    settings:
+      path: '@webroot/assets/site'
+    type: craft\fs\Local
+    url: '@assetsUrl/assets/site'
+meta:
+  __names__:
+    5c642d7e-b16b-4836-9575-668d75d242e5: Site # Site
+    5da841b1-ca0d-46ff-8bb1-04d6c889ac54: $SITE_NAME # $SITE_NAME
+    9f65213c-6373-4345-8521-de96363a988c: 'Public Schema' # Public Schema
+    54e60257-f31a-44aa-960e-bbd364197e28: Homepage # Homepage
+    94b4d5ac-d7ea-4241-a6cb-92b39f482f99: Common # Common
+    a5cb77be-c4d9-4d3e-88fb-d5384ca13941: 'Error Image' # Error Image
+    a72bfe0c-3389-4f9f-8ec1-ab318ec10b29: Errors # Errors
+    b8ba7115-3804-4c06-8a96-501963d1fc5c: 'Error Headline' # Error Headline
+    d08a0d16-0e00-49e6-9cd4-465fa2d65d7d: Errors # Errors
+    e6d658aa-c335-4f15-bbcd-59fe05d9e913: 'Error Text' # Error Text
+    f89601e9-4ba9-4a48-9e99-350aa9914912: $SITE_NAME # $SITE_NAME
+    faceb3ed-6771-453c-9c2a-aa330847f6db: Errors # Errors
+    fb3a8f31-d1cc-4c13-903b-a501f7e51f54: Homepage # Homepage
+plugins:
+  cp-field-inspect:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  dashboard-begone:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  expanded-singles:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  fastcgi-cache-bust:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  inventory:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
+  minify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  seomate:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  smith:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  templatecomments:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  typogrify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  vite:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: pro
+  live: true
+  name: Project
+  retryDuration: 60
+  schemaVersion: 4.5.3.0
+  timeZone: America/New_York
+users:
+  allowPublicRegistration: false
+  deactivateByDefault: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true
