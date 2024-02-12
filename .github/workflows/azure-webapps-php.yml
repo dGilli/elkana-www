@@ -75,6 +75,12 @@ jobs:
           name: php-app
           path: cms
 
+      - name: Upload nginx.conf as an artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: nginx-config
+          path: src/conf/nginx/site.com
+
   deploy:
     permissions:
       contents: none
@@ -89,6 +95,11 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: php-app
+
+      - name: Download nginx.conf artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: nginx-config
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
